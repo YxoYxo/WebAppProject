@@ -1,5 +1,110 @@
-{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+{% extends "base.html" %} {% block title %}Register{% endblock %} {% block content
     %}
     <h1 align="center">Online Registration</h1>
     <p><br>Please fill in your details below.</p>
+
+    <form method="POST">
+        <div class="form-group">
+            <label for="firstName">First Name*</label>
+            <input
+              type="firstName"
+              class="form-control"
+              id="firstName"
+              name="firstName"
+              placeholder="First Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="lastName">Last Name*</label>
+            <input
+              type="lastName"
+              class="form-control"
+              id="lastName"
+              name="firstName"
+              placeholder="Last Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="companyName">Company</label>
+            <input
+              type="companyName"
+              class="form-control"
+              id="companyName"
+              name="companyName"
+              placeholder="Company Name"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="address">Address</label>
+            <input
+              type="streetAdd"
+              class="form-control"
+              id="streetAdd"
+              name="streetAdd"
+              placeholder="Street Address"
+            />
+            <input
+              type="city"
+              class="form-control"
+              id="city"
+              name="city"
+              placeholder="City"
+            />
+            <input
+              type="state"
+              class="form-control"
+              id="state"
+              name="state"
+              placeholder="State"
+            />
+            <input
+              type="zipCode"
+              class="form-control"
+              id="zipCode"
+              name="zipCode"
+              placeholder="Zip Code"
+            />
+            <input
+              type="country"
+              class="form-control"
+              id="country"
+              name="country"
+              placeholder="Country"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email*</label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="contactNum">Contact Number</label>
+            <input
+              type="contactNum"
+              class="form-control"
+              id="contactNum"
+              name="contactNum"
+              placeholder="Contact Number"
+            />
+          </div>
+          <br />
+
+          <button type="submit" class="btn btn-primary">Register</button> <button type="exit" class="btn btn-primary">Cancel</button>
+
+          
+
+
+    </form>    
+
+
     {% endblock %}

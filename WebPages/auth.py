@@ -7,7 +7,7 @@ auth = Blueprint('auth', __name__)
 def login():
     return "<p>Login</>"
 
-@auth.route('/register')
+@auth.route('/register', methods=['GET', 'POST'])
 def register():
     return render_template("register.html")
 
