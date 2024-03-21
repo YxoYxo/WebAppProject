@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, flash
+import sqlite3
 
 auth = Blueprint('auth', __name__)
 
@@ -33,9 +34,23 @@ def register():
             flash('Email must be entered', category = 'error')
         elif len(contactNum) == 0:
             flash('Contact Numbr must be entered', category = 'error')
+        else:    
+            with sqlite3.connect('database.db') as con:
+                cur = con.cursor()
+                cur.execute("INSERT INTO USER_REGISTER (first_name, last_name, company) VALUES (?,?,?)",(firstName, lastName, companyName))
+                con.commit()
+                flash('Inserted')
+                
+            con.close() 
+            return render_template("home.html")
+        
+    return render_template("register.html")
+                
+            
+            
             
             
         
-    return render_template("register.html")
+    
 
 
