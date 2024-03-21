@@ -1,2 +1,1 @@
-select user_id, first_name
-from USER_REGISTER;
+delete from USER_REGISTER;

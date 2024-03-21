@@ -37,9 +37,14 @@ def register():
         else:    
             with sqlite3.connect('database.db') as con:
                 cur = con.cursor()
-                cur.execute("INSERT INTO USER_REGISTER (first_name, last_name, company) VALUES (?,?,?)",(firstName, lastName, companyName))
-                con.commit()
-                flash('Inserted')
+                cur.execute('SELECT COUNT(*) FROM USER_REGISTER WHERE email = ?', (email,))
+                result = cur.fetchone()[0]
+                if result > 0:
+                    flash('Account already created, please login with your email', category='error')
+                else:    
+                    cur.execute("INSERT INTO USER_REGISTER (first_name, last_name, company, street_address, city, state, zip_code, country, email, contact_number) VALUES (?,?,?,?,?,?,?,?,?,?)",(firstName, lastName, companyName, streetAdd, city, state, zipCode, country, email, contactNum))
+                    con.commit()
+                    flash('Account registered')
                 
             con.close() 
             return render_template("home.html")
