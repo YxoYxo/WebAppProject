@@ -1,1 +1,5 @@
-delete from USER_REGISTER;
+CREATE PROCEDURE populateAuditLog
+BEGIN 
+    INSERT INTO AUDIT_LOG (user_id) 
+    VALUES (1); 
+END;

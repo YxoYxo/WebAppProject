@@ -6,7 +6,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return "<p>Login</>"
+    return "<p>Page undergoing maintenance</>"
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():
@@ -44,7 +44,7 @@ def register():
                 else:    
                     cur.execute("INSERT INTO USER_REGISTER (first_name, last_name, company, street_address, city, state, zip_code, country, email, contact_number) VALUES (?,?,?,?,?,?,?,?,?,?)",(firstName, lastName, companyName, streetAdd, city, state, zipCode, country, email, contactNum))
                     con.commit()
-                    flash('Account registered')
+                    flash('Account registered')     
                 
             con.close() 
             return render_template("home.html")
