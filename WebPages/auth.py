@@ -6,7 +6,7 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/login')
 def login():
-    return "<p>Page undergoing maintenance</>"
+    return render_template("login.html")
 
 @auth.route('/register', methods=['GET', 'POST'])
 def register():

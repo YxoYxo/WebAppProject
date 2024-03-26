@@ -13,5 +13,5 @@ conn.execute('CREATE TABLE USER_REGISTER (user_id INTEGER PRIMARY KEY AUTOINCREM
 )
 print("Table created")
 
-conn.execute('CREATE TABLE AUDIT_LOG (log_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, activity_timestamp DATETIME, activity_type VARCHAR(50), FOREIGN KEY (user_id) REFERENCES USER_REGISTER(user_id))'
+conn.execute('CREATE TABLE AUDIT_LOG (log_id INTEGER PRIMARY KEY AUTOINCREMENT, user_id INTEGER, activity_timestamp DATETIME, activity_type VARCHAR(50), FOREIGN KEY (user_id))'
 )
